@@ -1,3 +1,4 @@
+# -*- encoding: utf-8 -*-
 require 'time'
 
 class Time
@@ -17,6 +18,7 @@ class Time
   Jubilee    = Decade  * 5
   Century    = Decade  * 10
   Millennium = Century * 10
+  TenMillennium = Millennium * 10
   Eon        = 1.0/0
 
   def ago_in_words
@@ -24,17 +26,14 @@ class Time
     difference = get_time_difference_from self
 
     # Catch less than 1 second differences.
-    return "just now" if (-1...1) === difference
+    return "现在" if (-1...1) === difference
 
     name   = get_unit_name_from difference
     amount = get_unit_amount_from difference
     count  = get_unit_count_from(difference, amount).abs
 
-    # Determine if unit name needs pluralization.
-    name += "s" if count > 1
-
     # Return the remaining string.
-    difference >= 0 ? "#{count} #{name} ago" : "in #{count} #{name}"
+    difference >= 0 ? "#{count}#{name}前" : "#{count}#{name}后"
   end
 
   private
@@ -49,16 +48,17 @@ class Time
 
   def get_unit_name_from difference
     case difference.abs
-      when Second...Minute      then "second"
-      when Minute...Hour        then "minute"
-      when Hour...Day           then "hour"
-      when Day...Week           then "day"
-      when Week...Month         then "week"
-      when Month...Year         then "month"
-      when Year..Decade         then "year"
-      when Decade...Century     then "decade"
-      when Century...Millennium then "century"
-      when Millennium...Eon     then "millennium"
+      when Second...Minute      then "秒"
+      when Minute...Hour        then "分钟"
+      when Hour...Day           then "小时"
+      when Day...Week           then "天"
+      when Week...Month         then "周"
+      when Month...Year         then "月"
+      when Year..Decade         then "年"
+      when Decade...Century     then "年"
+      when Century...Millennium then "世纪"
+      when Millennium...TenMillennium   then "千年"
+      when TenMillennium...Eon     then "万年"
     end
   end
 
@@ -73,7 +73,8 @@ class Time
       when Year..Decade         then Year
       when Decade...Century     then Decade
       when Century...Millennium then Century
-      when Millennium...Eon     then Millennium
+      when Millennium...TenMillennium   then Millennium
+      when TenMillennium...Eon     then TenMillennium
     end
   end
 
