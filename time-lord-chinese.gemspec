@@ -3,12 +3,12 @@ $:.push File.expand_path("../lib", __FILE__)
 require "time-lord/version"
 
 Gem::Specification.new do |s|
-  s.name        = "time-lord"
+  s.name        = "time-lord-chinese"
   s.version     = TimeLord::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ["Kurtis Rainbolt-Greene","Simon Hørup Eskildsen"]
-  s.email       = ["kurtisrainboltgreene@gmail.com","sirup@sirupsen.com"]
-  s.homepage    = "http://github.com/krainboltgreene/time-lord#README"
+  s.authors     = ["Liu Lantao", "Kurtis Rainbolt-Greene","Simon Hørup Eskildsen"]
+  s.email       = ["liulantao@gmail.com", "kurtisrainboltgreene@gmail.com","sirup@sirupsen.com"]
+  s.homepage    = "http://github.com/Lax/time-lord-chinese#README"
   s.summary     = %q{Adding various bonuses to the Time class.}
   s.description = %q{This is a gem that adds a ton of extras to the Time class.}
 

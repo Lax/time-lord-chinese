@@ -1,7 +1,7 @@
 time-lord
 =========
 
-**Current Version**: 0.1.5
+**Current Version**: 0.0.2
 
 `time-lord` is a gem that builds on the Time class to give more human expressions.
 It adds a lot of nifty little ideas present in Rails helpers to the time class.
@@ -49,7 +49,7 @@ $ gem install time-lord
 Although I suggest using `bundler`:
 
 ``` ruby
-gem 'time-lord', '0.1.5'
+gem 'time-lord', '0.0.2'
 ```
 
 
@@ -75,14 +75,9 @@ Absolutely feel free to contribute, please!
 Changelog
 ---------
 
-**v0.1.5**
+**v0.0.2**
 
-* Changed the name of the gem, added some tests
-
-**v0.1.0**
-
-* I didn't track changelogs when this version was released
-
+* time-lord-chinese
 
 Contributing
 ------------
