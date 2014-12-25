@@ -53,7 +53,7 @@ class Time
       when Hour...Day           then "小时"
       when Day...Week           then "天"
       when Week...Month         then "周"
-      when Month...Year         then "月"
+      when Month...Year         then "个月"
       when Year..Decade         then "年"
       when Decade...Century     then "年"
       when Century...Millennium then "世纪"
@@ -71,7 +71,7 @@ class Time
       when Week...Month         then Week
       when Month...Year         then Month
       when Year..Decade         then Year
-      when Decade...Century     then Decade
+      when Decade...Century     then Year
       when Century...Millennium then Century
       when Millennium...TenMillennium   then Millennium
       when TenMillennium...Eon     then TenMillennium
